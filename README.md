@@ -54,23 +54,23 @@ To read excel file.FastExcel parses these records and build an inner struct of e
 ##Example
 ###Basic Read
 ```java
-public void testDump() throws ExcelException {
-	Workbook workBook;
-	workBook = FastExcel.createReadableWorkbook(new File("test.xls"));
-	workBook.setSSTType(BIFFSetting.SST_TYPE_DEFAULT);//memory storage
-	workBook.open();
-	Sheet s;
-	s = workBook.getSheet(0);
-	System.out.println("SHEET:"+s);
-	for (int i = s.getFirstRow(); i < s.getLastRow(); i++) {
-	System.out.print(i+"#");
-	for (int j = s.getFirstColumn(); j < s.getLastColumn(); j++) {
-		System.out.print(","+s.getCell(i, j));
+	public void testDump() throws ExcelException {
+		Workbook workBook;
+		workBook = FastExcel.createReadableWorkbook(new File("test.xls"));
+		workBook.setSSTType(BIFFSetting.SST_TYPE_DEFAULT);//memory storage
+		workBook.open();
+		Sheet s;
+		s = workBook.getSheet(0);
+		System.out.println("SHEET:"+s);
+		for (int i = s.getFirstRow(); i < s.getLastRow(); i++) {
+		System.out.print(i+"#");
+		for (int j = s.getFirstColumn(); j < s.getLastColumn(); j++) {
+			System.out.print(","+s.getCell(i, j));
+		}
+		System.out.println();
+		}
+		workBook.close();
 	}
-	System.out.println();
-	}
-	workBook.close();
-}
 ```
 ###Event-based Read
 ```java
