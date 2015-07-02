@@ -8,6 +8,7 @@ FastExcel is content-based,that means we just care about the content of excel. S
 - Low level structures for compound document file format (also known as "OLE2 storage file format" or "Microsoft - Office compatible storage file format").
 - API for creating, reading excel file.
 
+Lastest Version 0.5.1	2010-12-25
 ##DOWNLOAD
 FastExcel 0.5.1 Release
 
@@ -86,9 +87,9 @@ Most of the Excel streams or substreams are divided into records. Each record co
 
 Offset  |Size	  |Contents
 :-------|:-----:|:-------
-0	      |2  	  |Identifier
-2	      |2  	  |Size of the following data (sz)
-4	      |sz  	  |Record data
+0	    |2   	|Identifier
+2	    |2  	|Size of the following data (sz)
+4	    |sz  	|Record data
 
 To read excel file.FastExcel parses these records and build an inner struct of excel file.The Record Parsers:
 
@@ -112,17 +113,13 @@ To read excel file.FastExcel parses these records and build an inner struct of e
 - NumberParser
 - RStringParser
 
-##LATEST VERSION
-
-Version 0.5.1	2010-12-25
-
 ##What's New
 add formula support.
 
-##LICENCE
+##Licence
 It runs on the Java 2 Platform (JDK 1.4 or later) .FastExcel is licensed under the terms of the GNU Lesser General Public Licence (LGPL).  A copy of the licence is included in the distribution.
 
-###If U have any questions contract 
+###Contract 
 
 - yAma <guooscar@gmail.com>
 - HeDYn <hedyn@foxmail.com>
