@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Build file for the FastExcel.
+author:yAma<guooscar@gmail.com> 2009-1-16.	
+-->
+
+<project name="fastexcel" basedir="." default="compile">
+
+	<property name="project.version" value="0.5.1" />
+	<property name="project.root" value="." />
+
+	<!-- src dir -->
+	<property name="src.dir" value="${project.root}/src" />
+
+	<!--temp dir-->
+	<property name="build.dir" value="${project.root}/bin" />
+	<!-- output dir-->
+	<property name="release.dir" value="${project.root}/rel" />
+	<tstamp prefix="build.">
+		<format property="timestamp" pattern="yyyy-MM-dd" />
+	</tstamp>
+
+	<target name="init" description="mkdir">
+		<mkdir dir="${build.dir}" />
+	</target>
+
+	<target name="clean" description="rm dir">
+		<delete dir="${release.dir}"/>
+		<delete dir="${build.dir}"/>
+	</target>
+
+	<target name="compile" depends="init" description="compile">
+		<javac 
+			destdir="${build.dir}" 
+			target="1.4" 
+			source="1.4"
+			debug="false" 
+			encoding="utf-8"
+			deprecation="false" 
+			optimize="true" 
+			failonerror="true">
+			<src path="${src.dir}" />
+		</javac>
+	</target>
+
+	<target name="release" depends="clean,compile">
+		<mkdir dir="${release.dir}"/>
+		<jar 
+			destfile="${release.dir}/fastexcel-${project.version}-src.jar"
+			basedir="${project.root}" 
+			includes="src/**,test/**,build.xml,changelog.txt,licence-LGPL.txt,readme.txt">
+			<manifest>
+				<attribute name="Built-By" value="yAma" />
+			</manifest>
+		</jar>
+		<jar 
+			destfile="${release.dir}/fastexcel-${project.version}-${build.timestamp}.jar" 
+			basedir="${build.dir}">
+			<manifest>
+				<attribute name="Built-By" value="yAma" />
+			</manifest>
+		</jar>
+	</target>
+
+</project>
