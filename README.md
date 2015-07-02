@@ -15,6 +15,6 @@ add formula support HeDYn<hedyn@foxmail.com>
 ###If U have any questions contract 
 
 - yAma <guooscar@gmail.com>
-- HeDYn<hedyn@foxmail.com>
-- 千橙<im.qiancheng@gmail.com>
+- HeDYn <hedyn@foxmail.com>
+- 千橙 <im.qiancheng@gmail.com>
 
