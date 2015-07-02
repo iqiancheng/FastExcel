@@ -9,12 +9,12 @@ It runs on the Java 2 Platform (JDK 1.4 or later) .FastExcel is licensed under t
 
 Version 0.5.1	2010-12-25
 
-#WHAT's NEW
+##WHAT's NEW
 add formula support HeDYn<hedyn@foxmail.com>
 
 ###If U have any questions contract 
-```
+
 - yAma <guooscar@gmail.com>
 - HeDYn<hedyn@foxmail.com>
 - 千橙<im.qiancheng@gmail.com>
-```
+
