@@ -116,7 +116,7 @@ To read excel file.FastExcel parses these records and build an inner struct of e
 ##What's New
 add formula support.
 
-##Licence
+##License
 It runs on the Java 2 Platform (JDK 1.4 or later) .FastExcel is licensed under the terms of the GNU Lesser General Public Licence (LGPL).  A copy of the licence is included in the distribution.
 
 ###Contract 
