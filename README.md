@@ -13,7 +13,7 @@ FastExcel 0.5.1 Release
 
 [DOWNLOAD][release]
 ##Example
-``Basic Read``
+**Basic Read**
 ```java
 	public void testDump() throws ExcelException {
 		Workbook workBook;
