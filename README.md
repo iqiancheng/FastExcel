@@ -12,46 +12,6 @@ FastExcel is content-based,that means we just care about the content of excel. S
 FastExcel 0.5.1 Release
 
 [DOWNLOAD][release]
-
-##How it works
-A workbook document with several sheets (BIFF5-BIFF8) is usually stored using the compound document file format (also known as "OLE2 storage file format" or "Microsoft Office compatible storage file format"). It contains several streams for different types of data.Depending on the document type, different names are used for the stream(s) they contain. BIFF5-BIFF8 workbook documents that are stored in a compound document file contain a stream in the root storage called the Workbook Stream. The name of this stream in the compound document file is "Book" for BIFF5 workbooks, and "Workbook" for BIFF8 workbooks.If a BIFF5-BIFF8 workbook document is stored as stream file, the entire stream is called the Workbook Stream. In BIFF5-BIFF8 Workbook Streams, the Workbook Globals Substream is not the leading part of the stream. It is followed by all Sheet Substreams in order of the sheets that are in the document. Common structure of a BIFF5-BIFF8 Workbook Stream:
-
-- Workbook Globals Substream (required)
-- First Sheet Substream (required)
-- Second Sheet Substream (optional)
-- Third Sheet Substream (optional)
-
-Most of the Excel streams or substreams are divided into records. Each record contains specific data for the various contents or features in a document. It consists of a header specifying the record type and size, followed by the record data. Common structure of a BIFF record:
-
-
-Offset  |Size	  |Contents
-:-------|:-----:|:-------
-0	      |2  	  |Identifier
-2	      |2  	  |Size of the following data (sz)
-4	      |sz  	  |Record data
-
-To read excel file.FastExcel parses these records and build an inner struct of excel file.The Record Parsers:
-
-- BOFParser
-- EOFParser
-- BoundSheetParser
-- SSTParser
-- IndexParser
-- DimensionParser
-- RowParser
-- LabelSSTParser
-- RKParser
-- MulRKParser
-- LabelParser
-- BoolerrParser
-- XFParser
-- FormatParser
-- DateModeParser
-- StyleParser
-- MulBlankParser
-- NumberParser
-- RStringParser
-
 ##Example
 ###Basic Read
 ```java
@@ -111,6 +71,46 @@ To read excel file.FastExcel parses these records and build an inner struct of e
 		wb.close();
 	}
 ```
+
+
+##How it works
+A workbook document with several sheets (BIFF5-BIFF8) is usually stored using the compound document file format (also known as "OLE2 storage file format" or "Microsoft Office compatible storage file format"). It contains several streams for different types of data.Depending on the document type, different names are used for the stream(s) they contain. BIFF5-BIFF8 workbook documents that are stored in a compound document file contain a stream in the root storage called the Workbook Stream. The name of this stream in the compound document file is "Book" for BIFF5 workbooks, and "Workbook" for BIFF8 workbooks.If a BIFF5-BIFF8 workbook document is stored as stream file, the entire stream is called the Workbook Stream. In BIFF5-BIFF8 Workbook Streams, the Workbook Globals Substream is not the leading part of the stream. It is followed by all Sheet Substreams in order of the sheets that are in the document. Common structure of a BIFF5-BIFF8 Workbook Stream:
+
+- Workbook Globals Substream (required)
+- First Sheet Substream (required)
+- Second Sheet Substream (optional)
+- Third Sheet Substream (optional)
+
+Most of the Excel streams or substreams are divided into records. Each record contains specific data for the various contents or features in a document. It consists of a header specifying the record type and size, followed by the record data. Common structure of a BIFF record:
+
+
+Offset  |Size	  |Contents
+:-------|:-----:|:-------
+0	      |2  	  |Identifier
+2	      |2  	  |Size of the following data (sz)
+4	      |sz  	  |Record data
+
+To read excel file.FastExcel parses these records and build an inner struct of excel file.The Record Parsers:
+
+- BOFParser
+- EOFParser
+- BoundSheetParser
+- SSTParser
+- IndexParser
+- DimensionParser
+- RowParser
+- LabelSSTParser
+- RKParser
+- MulRKParser
+- LabelParser
+- BoolerrParser
+- XFParser
+- FormatParser
+- DateModeParser
+- StyleParser
+- MulBlankParser
+- NumberParser
+- RStringParser
 
 ##LATEST VERSION
 
