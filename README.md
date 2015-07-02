@@ -33,7 +33,7 @@ FastExcel 0.5.1 Release
 		workBook.close();
 	}
 ```
-###Event-based Read
+**Event-based Read**
 ```java
   public void testEventDump() throws ExcelException {
 		Workbook workBook;
@@ -48,7 +48,7 @@ FastExcel 0.5.1 Release
 		workBook.close();
 	}
 ```
-###Basic Write
+**Basic Write**
 ```java
   public void testWrite() throws ExcelException{
 		File f=new File("write.xls");
@@ -60,7 +60,7 @@ FastExcel 0.5.1 Release
 	}
 	
 ```
-###Stream Write
+**Stream Write**
 ```java
   public void testStreamWrite() throws Exception{
 		File f=new File("write1.xls");
